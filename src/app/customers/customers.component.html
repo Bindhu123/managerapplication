@@ -1,0 +1,21 @@
+<div class="container">
+<div>Customer manager</div>
+<ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" (click)="loadPage('card')">Cardview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  (click)="loadPage('list')">listView</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" >new customer</a>
+    </li>
+    
+  </ul>
+</div>
+<div *ngIf="cardViewStatus">
+  <app-customers-card [customersData]='customersData'></app-customers-card>
+</div>
+<div *ngIf="listViewStatus">
+    <app-customers-grid></app-customers-grid>
+  </div>
